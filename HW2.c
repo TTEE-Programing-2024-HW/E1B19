@@ -22,7 +22,7 @@ int main(void){
     		printf("輸入一字元\n");//輸入1個字元
     		scanf("%c", &ch);
     		while(1){
-    			if(ch>='A'||ch=='a'){
+    			if(ch=='A'||ch=='a'){
     			char ip;
     			printf("請輸入一個字元（a到n之間）：");
     			fflush(stdin);
@@ -49,7 +49,7 @@ int main(void){
         			}
         			printf("\n");
     			}
-    			break;
+    		
 				}	
 				else if(ch=='B'&&ch=='b'){
     			printf("Lowecase\n");
@@ -58,10 +58,13 @@ int main(void){
 					printf("Digit\n");
 				}
 				else{
-					printf("重新輸入\n");
-					
+					printf("重新輸入\n");	
     				scanf("%c",&ch);
 				} 
+				printf("-------------------------------\n|a. 畫出直角三角形|\n|b. 顯示乘法表 |\n|c. 結束|\n-----------------------------\n");
+   	 			//主選單
+    			printf("輸入一字元\n");//輸入1個字元
+    			scanf("%c", &ch);
 			}
             break;
         }
