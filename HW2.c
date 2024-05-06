@@ -8,7 +8,7 @@ int main(void){
     system("cls");
     // 清除螢幕
     int a,t=0;
-    char b;
+    char ch;
     while(t<=3){
         printf("請輸入密碼:");
         scanf("%d",&a);
@@ -20,8 +20,49 @@ int main(void){
     		printf("-------------------------------\n|a. 畫出直角三角形|\n|b. 顯示乘法表 |\n|c. 結束|\n-----------------------------\n");
    	 		//主選單
     		printf("輸入一字元\n");//輸入1個字元
-    		scanf(" %c", &b);
-    		
+    		scanf("%c", &ch);
+    		while(1){
+    			if(ch>='A'||ch=='a'){
+    			char ip;
+    			printf("請輸入一個字元（a到n之間）：");
+    			fflush(stdin);
+    			scanf("%c",&ip);
+    
+    			if (ip<'a'||ip>'n') {
+        			printf("錯誤的輸入！請重新輸入。\n");
+    			}
+    			system("cls"); // 清除螢幕
+
+    			int b=ip-'a'+1; // 計算打印的行數
+    
+    			int i=1;
+    			for (i;i<=b;i++) {
+        			char ch=ip-i+1;
+					int j=1;
+					// 打印空格
+        			for (j;j<=b-i;j++){
+            			printf("  ");
+        			}
+					// 打印字母
+        			for (ch;ch<=ip;ch++){
+            			printf("%c ",ch);
+        			}
+        			printf("\n");
+    			}
+    			break;
+				}	
+				else if(ch=='B'&&ch=='b'){
+    			printf("Lowecase\n");
+				}
+				else if(ch=='C'&&ch=='c'){
+					printf("Digit\n");
+				}
+				else{
+					printf("重新輸入\n");
+					
+    				scanf("%c",&ch);
+				} 
+			}
             break;
         }
         else{
