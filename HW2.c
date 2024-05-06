@@ -19,9 +19,10 @@ int main(void){
     		// 清除螢幕
     		printf("-------------------------------\n|a. 畫出直角三角形|\n|b. 顯示乘法表 |\n|c. 結束|\n-----------------------------\n");
    	 		//主選單
-    		printf("輸入一字元\n");//輸入1個字元
-    		scanf("%c", &ch);
     		while(1){
+    			printf("輸入一字元\n");//輸入1個字元
+    			fflush(stdin);
+    			scanf("%c", &ch);
     			if(ch=='A'||ch=='a'){
     			char ip;
     			printf("請輸入一個字元（a到n之間）：");
@@ -55,46 +56,57 @@ int main(void){
 				else if(ch=='B'||ch=='b'){
     			int n;
 	
-    // 請求使用者輸入一個 1 到 9 的整數
-    		do {
-        		printf("請輸入一個1到9的整數：");
-        		fflush(stdin);
-        		scanf("%d", &n);
-        		if (n<1||n>9){
-            		printf("輸入錯誤！請重新輸入。\n");
-        		}
-   			}while(n<1||n>9);
-    		system("cls"); // 清除螢幕
-    		// 顯示乘法表
-    		printf("乘法表 %d*%d：\n",n,n);
-    		int i=1,j=1;
-    		for(i;i<=n;i++){
-        		for(j=1;j<=n;j++){
-            		printf("%d * %d =%d\t",i,j,i*j);
-        		}
-       		printf("\n");
-    		}
+    		// 請求使用者輸入一個 1 到 9 的整數
+    			do {
+        			printf("請輸入一個1到9的整數：");
+        			fflush(stdin);
+        			scanf("%d", &n);
+        			if (n<1||n>9){
+            			printf("輸入錯誤！請重新輸入。\n");
+        			}
+   				}while(n<1||n>9);
+    			system("cls"); // 清除螢幕
+    			// 顯示乘法表
+    			printf("乘法表 %d*%d：\n",n,n);
+    			int i=1,j=1;
+    			for(i;i<=n;i++){
+        			for(j=1;j<=n;j++){
+            			printf(" %d * %d =%d\t",i,j,i*j);
+        			}
+       			printf("\n");
+    			}
 				}
-				else if(ch=='C'&&ch=='c'){
-					printf("Digit\n");
-				}
-				else{
-					printf("重新輸入\n");	
-    				scanf("%c",&ch);
+				else if(ch=='C'||ch=='c'){
+					char ct;
+				char cr;
+    			do{
+        			printf("Continue? (y/n): ");
+        			scanf(" %c", &cr);
+         			if (cr=='y'||cr=='Y'){
+            			break;// 結束
+        			}        
+					else if(cr=='n'||cr=='N'){
+            			printf("程式結束。\n");
+            			return 0;
+        			}
+					else{
+            			printf("錯誤的輸入！請重新輸入。\n");
+        			}
+    			}while(1);
+						
 				} 
-				printf("-------------------------------\n|a. 畫出直角三角形|\n|b. 顯示乘法表 |\n|c. 結束|\n-----------------------------\n");
-   	 			//主選單
-    			printf("輸入一字元\n");//輸入1個字元
-    			scanf("%c", &ch);
+			
 			}
-            break;
+			
         }
-        else{
-            printf("輸入錯誤\n");
+    	else{
+    		printf("輸入錯誤\n");
             t+=1;
             if(t==3)
             break;
         }
+	}
+            
+    return 0;
     }
-	return 0;
-}
+
