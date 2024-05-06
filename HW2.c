@@ -8,14 +8,20 @@ int main(void){
     system("cls");
     // 清除螢幕
     int a,t=0;
+    char b;
     while(t<=3){
         printf("請輸入密碼:");
         scanf("%d",&a);
         fflush(stdin);
         if(a==2024){
         	getch();
-    	system("cls");
-    	// 清除螢幕
+    		system("cls");
+    		// 清除螢幕
+    		printf("-------------------------------\n|a. 畫出直角三角形|\n|b. 顯示乘法表 |\n|c. 結束|\n-----------------------------\n");
+   	 		//主選單
+    		printf("輸入一字元\n");//輸入1個字元
+    		scanf(" %c", &b);
+    		
             break;
         }
         else{
