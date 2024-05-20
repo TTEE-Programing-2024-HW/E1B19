@@ -144,7 +144,7 @@ void step3(char seat[9][9]) {
 
         seat[row-1][col-1]='@';
 
-        // 再次確認
+        // 確認
         printf("是否繼續選擇座位？（y/n）：");
         fflush(stdin);
         char cont;
@@ -154,7 +154,7 @@ void step3(char seat[9][9]) {
 
     // 顯示排位結果
     step1(seat);
-    // 確認後將@變為*
+    // 將@變為*
     int i,j;
     for(i=0;i<9;i++){
         for(j=0;j<9;j++){
@@ -186,9 +186,11 @@ int main(void){
     		system("cls");
     		randseat(seat);
     		// 清除螢幕
-    		printf("-------------------------------\n|a. Available|\n|b.Arrange |\n|c.Choose by yourself|\n|d.Exit |\n-----------------------------\n");
-   	 		//主選單
+    		
+   	 	
     		while(1){
+    			//主選單
+    			printf("-------------------------------\n|a. Available|\n|b.Arrange |\n|c.Choose by yourself|\n|d.Exit |\n-----------------------------\n");
     			printf("輸入一字元\n");//輸入1個字元
     			fflush(stdin);
     			scanf("%c", &ch);
@@ -196,6 +198,8 @@ int main(void){
     				step1(seat);
 			}
 			else if(ch=='b'||ch=='B'){
+				getch();
+    			system("cls");
     			printf("請問您需要幾個座位？(1~4)：");
                 int num_seats;
                 fflush(stdin);
@@ -224,11 +228,16 @@ int main(void){
 				
 			}
 			else if(ch=='c'||ch=='C'){
-				step3(seat);
+				getch();
+    			system("cls");
 				step1(seat);
+				step3(seat);
+			
 			}	
 
 				else if(ch=='d'||ch=='D'){
+				getch();
+    			system("cls");
 				char cr;
 				do{
         			printf("Continue? (y/n): ");
@@ -267,6 +276,6 @@ int main(void){
     return 0;
     }
 /*
-寫這個程式很有意思，雖然寫的過程有很多的問題，因為不常用所以主要都卡在do while的指令，C部分卡最久 因為不知道為什麼沒法輸入Y或N，整體還可以接受
+這次的程式非常的麻煩又很困難，原本一開始打算用不用函數直接一步步寫 但要重複寫的東西太多了 所以就改成用函數 比較好去處理
 */
 
