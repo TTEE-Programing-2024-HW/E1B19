@@ -162,10 +162,18 @@ int main(void){
                 int num_seats;
                 fflush(stdin);
                 scanf("%d",&num_seats);
-                if (num_seats>=1&&num_seats<=4){
+               
                     step2(seat,num_seats);
                     step1(seat); //顯示安排座位後的座位表
                     int i,j;
+                    char con;
+                    getch();
+    				system("cls");
+    				fflush(stdin);
+                    printf("是否同意此座位安排(y/n):\n");
+                    scanf("%c",&con);
+                    if (con=='y'||con=='Y'){
+            		int i,j;
                     for(i=0;i<9;i++){
         				for(j=0;j<9;j++){
             				if(seat[i][j]=='@'){
@@ -173,9 +181,11 @@ int main(void){
            					}	
         				}
     				}
-                }else{
-                    printf("請輸入正確的座位數量(1~4)。\n");
-                }
+    				step1(seat); 
+        		}    
+				else{
+					continue;
+				}    
 			}
 
 				else if(ch=='d'||ch=='D'){
