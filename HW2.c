@@ -18,10 +18,76 @@ int main(void){
     		system("cls");
     		// 清除螢幕
     		printf("-------------------------------\n|a. Available|\n|b.Arrange |\n|c.Choose by yourself|\n|d.Exit |\n-----------------------------\n");
-   	 	
+   	 		//主選單
+    		while(1){
+    			printf("輸入一字元\n");//輸入1個字元
+    			fflush(stdin);
+    			scanf("%c", &ch);
+    			if(ch=='A'||ch=='a'){
+    				char seat[9][9];
+    			int co=0;
+    //使用 rand 函數的返回值作為種子
+    			srand((unsigned) time(NULL));
+    //隨機產生十個已被預訂的座位
+    			while(co<10){
+        		int x=rand()%9;//生成隨機行號
+        		int y=rand()%9;//生成隨機列號
+        		if (seat[x][y]!='*'){
+            		seat[x][y]='*';//標記座位為已預訂
+            		co++;
+        		}
+        		int i,j;
+        		for(i=0;i<9;i++){
+        		for(j=0;j<9;j++){
+        			if(seat[i][j]=='@'){
+            		seat[i][j]='*';
+            		co++;
+					}
+        		}	
+    		}	
+    	}
+    		printf("座位表：\n");
+    		printf("\\123456789\n");
+    		int i,j;
+    		for(i=8;i>=0;i--){
+        		printf("%d",i+1);
+        		for(j=0;j<9;j++){
+            		if(seat[i][j]=='*'){
+                		printf("*");
+            		}else if(seat[i][j]=='@'){
+                		printf("@");
+            		}else{
+            	    	printf("-");
+            		}
+        		}
+       	 	printf("\n");
+    		}
+    		system("pause"); //等待用戶按下任意鍵
+		}
+				
+    			
+    	
+				else if(ch=='d'||ch=='D'){
+				char cr;
+				do{
+        			printf("Continue? (y/n): ");
+        			scanf(" %c", &cr);
+         			if (cr=='y'||cr=='Y'){
+            			break;// 結束
+        			}        
+					else if(cr=='n'||cr=='N'){
+            			printf("程式結束。\n");
+            			return 0;
+        			}
+					else{
+            			printf("錯誤的輸入！請重新輸入。\n");
+        			}
+    			}while(1);
+			
+				} 
 			
 			}
-			
+		}
         
     	else{
     		printf("輸入錯誤\n");
@@ -29,6 +95,7 @@ int main(void){
             if(t==3)
             break;
         }
+	
 	}
             
     return 0;
