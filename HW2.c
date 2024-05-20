@@ -17,88 +17,12 @@ int main(void){
         	getch();
     		system("cls");
     		// 清除螢幕
-    		printf("-------------------------------\n|a. 畫出直角三角形|\n|b. 顯示乘法表 |\n|c. 結束|\n-----------------------------\n");
-   	 		//主選單
-    		while(1){
-    			printf("輸入一字元\n");//輸入1個字元
-    			fflush(stdin);
-    			scanf("%c", &ch);
-    			if(ch=='A'||ch=='a'){
-    			char ip;
-    			printf("請輸入一個字元（a到n之間）：");
-    			fflush(stdin);
-    			scanf("%c",&ip);
-    
-    			if (ip<'a'||ip>'n') {
-        			printf("錯誤的輸入！請重新輸入。\n");
-    			}
-    			system("cls"); // 清除螢幕
-
-    			int b=ip-'a'+1; // 計算打印的行數
-    
-    			int i=1;
-    			for (i;i<=b;i++) {
-        			char ch=ip-i+1;
-					int j=1;
-					// 打印空格
-        			for (j;j<=b-i;j++){
-            			printf("  ");
-        			}
-					// 打印字母
-        			for (ch;ch<=ip;ch++){
-            			printf("%c ",ch);
-        			}
-        			printf("\n");
-    			}
-    			fflush(stdin);
-    			system("cls");
-				}	
-				else if(ch=='B'||ch=='b'){
-    			int n;
-	
-    		// 請求使用者輸入一個 1 到 9 的整數
-    			do {
-        			printf("請輸入一個1到9的整數：");
-        			fflush(stdin);
-        			scanf("%d", &n);
-        			if (n<1||n>9){
-            			printf("輸入錯誤！請重新輸入。\n");
-        			}
-   				}while(n<1||n>9);
-    			system("cls"); // 清除螢幕
-    			// 顯示乘法表
-    			printf("乘法表 %d*%d：\n",n,n);
-    			int i=1,j=1;
-    			for(i;i<=n;i++){
-        			for(j=1;j<=n;j++){
-            			printf(" %d * %d =%d\t",i,j,i*j);
-        			}
-       			printf("\n");
-    			}
-				}
-				else if(ch=='C'||ch=='c'){
-					char ct;
-				char cr;
-    			do{
-        			printf("Continue? (y/n): ");
-        			scanf(" %c", &cr);
-         			if (cr=='y'||cr=='Y'){
-            			break;// 結束
-        			}        
-					else if(cr=='n'||cr=='N'){
-            			printf("程式結束。\n");
-            			return 0;
-        			}
-					else{
-            			printf("錯誤的輸入！請重新輸入。\n");
-        			}
-    			}while(1);
-						
-				} 
+    		printf("-------------------------------\n|a. Available|\n|b.Arrange |\n|c.Choose by yourself|\n|d.Exit |\n-----------------------------\n");
+   	 	
 			
 			}
 			
-        }
+        
     	else{
     		printf("輸入錯誤\n");
             t+=1;
