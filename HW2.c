@@ -100,22 +100,39 @@ int main(void){
     			system("PAUSE");
     			system("cls");
 				}
-				
-    			
-    	}
+				else if(ch=='c'||ch=='C'){
+					char search[50];
+    				printf("請輸入要搜尋的學生姓名：");
+   					scanf("%s",search);
+    				int i;
+    				for(i=0;i<stdcount;i++){
+        			if(strcmp(students[i].name,search)==0){//strcmp(a,b)比較兩個字串是否相等(用ASCII依序比較大小)，相等就回傳0
+        				printf("姓名:%s, 學號:%d, 數學:%d, 物理:%d, 英文:%d, 平均成績:%.1f\n",students[i].name,students[i].num,students[i].mat,students[i].phy,students[i].eng,students[i].avg);
+            			printf("按任意鍵返回主選單。\n");
+            			system("PAUSE");
+            			system("cls");
+            			return;
+        			}
+        			printf("找不到資料。\n");
+    				system("PAUSE");
+    				system("cls");
+					}
+			}
+		}
 					
 }
 			
 			
-		
-        
+
+
     	else{
     		printf("輸入錯誤\n");
             t+=1;
             if(t==3)
             break;
         }
-    }
+
+}
 	
 
 
