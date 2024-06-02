@@ -137,7 +137,22 @@ int main(void){
     			
     				system("PAUSE");
     				system("cls");
-
+				}
+				else if(ch=='e'||ch=='E'){
+					char ch;
+    				printf("確定離開？(y/n):");
+    				while(1){
+    				fflush(stdin);
+        			scanf("%c",&ch);
+        			if(ch=='y'||ch=='Y'){
+            			exit(0);//直接結束程式 
+        			}else if(ch=='n'||ch=='N'){
+            			system("cls");
+            			break;
+        			}else{
+            			printf("無效輸入，請重新輸入 (y/n): ");
+        			}
+    				}
 				}
 		}
 					
