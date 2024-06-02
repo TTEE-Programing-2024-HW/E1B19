@@ -117,7 +117,28 @@ int main(void){
     				system("PAUSE");
     				system("cls");
 					}
-			}
+				}
+				else if(ch=='d'||ch=='D'){
+					    // 排序
+    				int i,j;
+    				for(i=0;i<stdcount-1;i++){
+        				for(j=i+1;j<stdcount;j++){
+            				if(students[i].avg<students[j].avg){//交換i跟j 
+                				struct student temp=students[i];//設暫存 
+               					students[i]=students[j];
+                				students[j]=temp;
+            				}
+        				}			
+    				}
+    				printf("成績排名如下：\n");
+    				for(i=0;i<stdcount;i++){
+        			printf("姓名: %s, 學號: %d, 平均成績: %.1f\n",students[i].name,students[i].num,students[i].avg);
+    				}
+    			
+    				system("PAUSE");
+    				system("cls");
+
+				}
 		}
 					
 }
