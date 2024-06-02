@@ -90,17 +90,17 @@ int main(void){
    					system("PAUSE");
     				system("cls");
 				}
-				else if (ch=='b'||ch=='B'){
-					 printf("學生成績：\n");
+				else if(ch=='b'||ch=='B'){
+					printf("學生成績：\n");
     				int i;
     				for(i=0;i<stdcount;i++){
         			printf("姓名:%s, 學號:%d, 數學:%d, 物理:%d, 英文:%d, 平均成績:%.1f\n",students[i].name,students[i].num,students[i].mat,students[i].phy,students[i].eng,students[i].avg);
-				}
+					}
     			
     			system("PAUSE");
     			system("cls");
 				}
-
+				
     			
     	}
 					
